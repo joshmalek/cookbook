@@ -10,29 +10,40 @@ const App = () => {
   const APP_KEY = "483ed0cf505f4faf21e6aed59a28189c";
 
   const [recipes, setRecipes] = useState([]); //contains all recipes from GET call
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("chicken");
 
   useEffect( () => {
     getRecipes();
-
-
-  }, []);  //useeffect will only update if item in brackets changes
+  }, [query]);  //useEffect will only update if item in brackets changes
 
   const getRecipes = async () => {
-    const response = await fetch( `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    const response = await fetch( `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();
     setRecipes(data.hits); //sets all returned recipes to state
     console.log(data.hits);
   }
+  
+  //this will save the value of the search bar on change
+  const updateSearch = e =>{
+    setSearch(e.target.value);
+  }
+
+  const getSearch = e => { //event function
+    e.preventDefault(); //stops page refresh
+    setQuery(search);
+  }
 
   return(
     <div className = "App">
-      <form className="search-form">
-        <input className="search-bar" type="text"/>
+      <form onSubmit={getSearch} className="search-form">
+        <input className="search-bar" type="text" value = {search} onChange = {updateSearch}/>
         <button className="search-button" type="submit">Search</button>
       </form>
 
       {recipes.map(recipe =>(
         <Recipe 
+          key = {recipe.recipe.title}
           title = {recipe.recipe.label} 
           calories = {recipe.recipe.calories} 
           image = {recipe.recipe.image}
