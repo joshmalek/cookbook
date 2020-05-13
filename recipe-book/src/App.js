@@ -36,12 +36,12 @@ const App = () => {
   return(
     <div className = "App">
 
+      <h1 className="title">cookbook.js</h1>   
+      <p className="text">Welcome to <b>cookbook.js</b>, enter a keyword and the database will return all recipes associated with the keyword.</p>
       <form onSubmit={getSearch} className="search-form">  
-        <h1 className="title">cookbook.js</h1>   
         <input className="search-bar" type="text" value = {search} onChange = {updateSearch}/>
-        <button className="search-button" type="submit">Search</button>
       </form>
-      <p className="query">Welcome to cookbook.js, enter a keyword and the database will return all recipes associated with the keyword.</p>
+      
       <h3 className="query">Showing results for "{query}"</h3>
       <div className = {"recipes"}>
         {recipes.map(recipe =>(
