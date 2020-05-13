@@ -8,11 +8,19 @@
     background: white;
     align-items: center;
     min-width: 40%;
+    max-width: 40%;
+    word-wrap: break-all;
+    white-space: normal;
 }
 
 .image{
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title{
+    word-wrap: break-all;
+    margin: 40px;
 }

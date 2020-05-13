@@ -36,3 +36,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.query{
+  text-align: center;
+}

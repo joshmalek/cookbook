@@ -5,7 +5,7 @@ const Recipe = ({title,calories,image,ingredients}) => {
     calories = Math.ceil(calories);
     return(
         <div className={style.recipe}>
-            <h1>{title}</h1>
+            <h1 className = {style.title}>{title}</h1>
             <img className = {style.image} src={image} alt=""/>
             <p>Calories: {calories}</p>
             <ul>

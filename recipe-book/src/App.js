@@ -8,7 +8,7 @@ const App = () => {
 
   const APP_ID = "d01ab069";
   const APP_KEY = "483ed0cf505f4faf21e6aed59a28189c";
-
+  var qu = "chicken";
   const [recipes, setRecipes] = useState([]); //contains all recipes from GET call
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
@@ -21,7 +21,6 @@ const App = () => {
     const response = await fetch( `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();
     setRecipes(data.hits); //sets all returned recipes to state
-    console.log(data.hits);
   }
   
   //this will save the value of the search bar on change
@@ -42,6 +41,8 @@ const App = () => {
         <input className="search-bar" type="text" value = {search} onChange = {updateSearch}/>
         <button className="search-button" type="submit">Search</button>
       </form>
+      <p className="query">Welcome to cookbook.js, enter a keyword and the database will return all recipes associated with the keyword.</p>
+      <h3 className="query">Showing results for "{query}"</h3>
       <div className = {"recipes"}>
         {recipes.map(recipe =>(
           <Recipe 
