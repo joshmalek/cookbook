@@ -1,7 +1,7 @@
 # cookbook
 
 #### In Use: ####
-![cookbook.js](/img/cookbook.png)
+![cookbook.js](/img/cookbook.PNG)
 
 #### Description: ####
 App that parses a recipe webpage and extracts the ingredients and cooking instructions, cutting out the unnecessary backstory.
