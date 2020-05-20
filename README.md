@@ -5,3 +5,5 @@ React app that utilizes the Edamam Recipe Search API and presents it in a clean,
 ### In Use
 [![Image from Gyazo](https://i.gyazo.com/a54f83764de07100d81fc81b556e04b4.gif)](https://gyazo.com/a54f83764de07100d81fc81b556e04b4)
 
+### Todo
+Add a user backend, allowing users to log in and save recipes they like, as well as allowing them to add their on recipes in a form.
